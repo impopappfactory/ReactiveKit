@@ -24,6 +24,8 @@
 //  Thank you Thomas Visser! https://github.com/Thomvis/BrightFutures/
 //
 
+import Foundation
+
 public typealias ExecutionContext = (() -> Void) -> Void
 
 public let ImmediateExecutionContext: ExecutionContext = { task in
