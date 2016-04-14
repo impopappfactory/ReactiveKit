@@ -100,11 +100,11 @@ public extension NSObject {
     }
   }
 
-  public func rAssociatedPropertyForValueForKey<T>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> Property<T> {
+  public func rAssociatedPropertyForValueForKey<T>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> ObservableProperty<T> {
     if let property: AnyObject = r_associatedProperties[key] {
-      return property as! Property<T>
+      return property as! ObservableProperty<T>
     } else {
-      let property = Property<T>(initial ?? self.valueForKey(key) as! T)
+      let property = ObservableProperty<T>(initial ?? self.valueForKey(key) as! T)
       r_associatedProperties[key] = property
 
       property.observeNext { [weak self] (value: T) in
@@ -123,17 +123,17 @@ public extension NSObject {
     }
   }
 
-  public func rAssociatedPropertyForValueForKey<T: OptionalType>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> Property<T> {
+  public func rAssociatedPropertyForValueForKey<T: OptionalType>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> ObservableProperty<T> {
     if let property: AnyObject = r_associatedProperties[key] {
-      return property as! Property<T>
+      return property as! ObservableProperty<T>
     } else {
-      let property: Property<T>
+      let property: ObservableProperty<T>
       if let initial = initial {
-        property = Property(initial)
+        property = ObservableProperty(initial)
       } else if let value = self.valueForKey(key) as? T.Wrapped {
-        property = Property(T(value))
+        property = ObservableProperty(T(value))
       } else {
-        property = Property(T())
+        property = ObservableProperty(T())
       }
 
       r_associatedProperties[key] = property

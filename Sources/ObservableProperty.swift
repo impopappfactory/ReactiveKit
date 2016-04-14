@@ -23,12 +23,12 @@
 //
 
 /// Represents a state as a stream of events.
-public protocol PropertyType: StreamType {
+public protocol ObservablePropertyType: StreamType {
   var value: Element { get set }
 }
 
 /// Represents a state as a stream of events.
-public final class Property<T>: PropertyType {
+public final class ObservableProperty<T>: ObservablePropertyType {
 
   private var _value: T
   private let subject = PublishSubject<StreamEvent<T>>()
@@ -61,7 +61,7 @@ public final class Property<T>: PropertyType {
   }
 }
 
-extension Property: BindableType {
+extension ObservableProperty: BindableType {
   
   /// Returns an observer that can be used to dispatch events to the receiver.
   /// Can accept a disposable that will be disposed on receiver's deinit.
