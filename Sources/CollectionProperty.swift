@@ -183,7 +183,7 @@ public extension CollectionChangesetType where Collection.Index: Equatable {
   }
 }
 
-public protocol CollectionPropertyType: CollectionType, StreamType, PropertyType, SubjectType {
+public protocol CollectionPropertyType: CollectionType, StreamType, ReactivePropertyType, SubjectType {
   associatedtype Collection: CollectionType
   associatedtype Index = Collection.Index
   associatedtype Member = Collection.Generator.Element

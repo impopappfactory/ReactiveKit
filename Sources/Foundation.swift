@@ -100,11 +100,11 @@ public extension NSObject {
     }
   }
 
-  public func rAssociatedPropertyForValueForKey<T>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> Property<T> {
+  public func rAssociatedPropertyForValueForKey<T>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> ReactiveProperty<T> {
     if let property: AnyObject = r_associatedProperties[key] {
-      return property as! Property<T>
+      return property as! ReactiveProperty<T>
     } else {
-      let property = Property<T>(initial ?? self.valueForKey(key) as! T)
+      let property = ReactiveProperty<T>(initial ?? self.valueForKey(key) as! T)
       r_associatedProperties[key] = property
 
       property.observeNext { [weak self] (value: T) in
@@ -123,17 +123,17 @@ public extension NSObject {
     }
   }
 
-  public func rAssociatedPropertyForValueForKey<T: OptionalType>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> Property<T> {
+  public func rAssociatedPropertyForValueForKey<T: OptionalType>(key: String, initial: T? = nil, set: (T -> ())? = nil) -> ReactiveProperty<T> {
     if let property: AnyObject = r_associatedProperties[key] {
-      return property as! Property<T>
+      return property as! ReactiveProperty<T>
     } else {
-      let property: Property<T>
+      let property: ReactiveProperty<T>
       if let initial = initial {
-        property = Property(initial)
+        property = ReactiveProperty(initial)
       } else if let value = self.valueForKey(key) as? T.Wrapped {
-        property = Property(T(value))
+        property = ReactiveProperty(T(value))
       } else {
-        property = Property(T())
+        property = ReactiveProperty(T())
       }
 
       r_associatedProperties[key] = property

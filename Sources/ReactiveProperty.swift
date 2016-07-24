@@ -23,13 +23,13 @@
 //
 
 /// Represents a state as a stream of events.
-public protocol PropertyType {
+public protocol ReactivePropertyType {
   associatedtype ProperyElement
   var value: ProperyElement { get }
 }
 
 /// Represents a state as a stream of events.
-public final class Property<T>: PropertyType, StreamType, SubjectType {
+public final class ReactiveProperty<T>: ReactivePropertyType, StreamType, SubjectType {
 
   private var _value: T
   private let subject = PublishSubject<StreamEvent<T>>()
@@ -60,8 +60,8 @@ public final class Property<T>: PropertyType, StreamType, SubjectType {
     subject.on(event)
   }
 
-  public var readOnlyView: AnyProperty<T> {
-    return AnyProperty(property: self)
+  public var readOnlyView: AnyReactiveProperty<T> {
+    return AnyReactiveProperty(property: self)
   }
 
   public init(_ value: T) {
@@ -77,9 +77,9 @@ public final class Property<T>: PropertyType, StreamType, SubjectType {
   }
 }
 
-public final class AnyProperty<T>: PropertyType, StreamType {
+public final class AnyReactiveProperty<T>: ReactivePropertyType, StreamType {
 
-  private let property: Property<T>
+  private let property: ReactiveProperty<T>
 
   public var value: T {
     return property.value
@@ -89,12 +89,12 @@ public final class AnyProperty<T>: PropertyType, StreamType {
     return property.rawStream
   }
 
-  public init(property: Property<T>) {
+  public init(property: ReactiveProperty<T>) {
     self.property = property
   }
 }
 
-extension Property: BindableType {
+extension ReactiveProperty: BindableType {
   
   /// Returns an observer that can be used to dispatch events to the receiver.
   /// Can accept a disposable that will be disposed on receiver's deinit.

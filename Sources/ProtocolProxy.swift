@@ -326,7 +326,7 @@ extension ProtocolProxy {
   /// Provides a feed for specified protocol method.
   ///
   /// - important: This is ObjC API so you have to use ObjC types like NSString instead of String!
-  public func feed<A, T, R>(property: Property<A>, to selector: Selector, map: (A, T) -> R) {
+  public func feed<A, T, R>(property: ReactiveProperty<A>, to selector: Selector, map: (A, T) -> R) {
     let _ = stream(selector) { (_: PushStream<Void>, a1: T) -> R in
       return map(property.value, a1)
     }
@@ -345,7 +345,7 @@ extension ProtocolProxy {
   /// Provides a feed for specified protocol method.
   ///
   /// - important: This is ObjC API so you have to use ObjC types like NSString instead of String!
-  public func feed<A, T, U, R>(property: Property<A>, to selector: Selector, map: (A, T, U) -> R) {
+  public func feed<A, T, U, R>(property: ReactiveProperty<A>, to selector: Selector, map: (A, T, U) -> R) {
     let _ = stream(selector) { (_: PushStream<Void>, a1: T, a2: U) -> R in
       return map(property.value, a1, a2)
     }
@@ -364,7 +364,7 @@ extension ProtocolProxy {
   /// Provides a feed for specified protocol method.
   ///
   /// - important: This is ObjC API so you have to use ObjC types like NSString instead of String!
-  public func feed<A, T, U, V, R>(property: Property<A>, to selector: Selector, map: (A, T, U, V) -> R) {
+  public func feed<A, T, U, V, R>(property: ReactiveProperty<A>, to selector: Selector, map: (A, T, U, V) -> R) {
     let _ = stream(selector) { (_: PushStream<Void>, a1: T, a2: U, a3: V) -> R in
       return map(property.value, a1, a2, a3)
     }
@@ -383,7 +383,7 @@ extension ProtocolProxy {
   /// Provides a feed for specified protocol method.
   ///
   /// - important: This is ObjC API so you have to use ObjC types like NSString instead of String!
-  public func feed<A, T, U, V, W, R>(property: Property<A>, to selector: Selector, map: (A, T, U, V, W) -> R) {
+  public func feed<A, T, U, V, W, R>(property: ReactiveProperty<A>, to selector: Selector, map: (A, T, U, V, W) -> R) {
     let _ = stream(selector) { (_: PushStream<Void>, a1: T, a2: U, a3: V, a4: W) -> R in
       return map(property.value, a1, a2, a3, a4)
     }
@@ -402,7 +402,7 @@ extension ProtocolProxy {
   /// Provides a feed for specified protocol method.
   ///
   /// - important: This is ObjC API so you have to use ObjC types like NSString instead of String!
-  public func feed<A, T, U, V, W, X, R>(property: Property<A>, to selector: Selector, map: (A, T, U, V, W, X) -> R) {
+  public func feed<A, T, U, V, W, X, R>(property: ReactiveProperty<A>, to selector: Selector, map: (A, T, U, V, W, X) -> R) {
     let _ = stream(selector) { (_: PushStream<Void>, a1: T, a2: U, a3: V, a4: W, a5: X) -> R in
       return map(property.value, a1, a2, a3, a4, a5)
     }
