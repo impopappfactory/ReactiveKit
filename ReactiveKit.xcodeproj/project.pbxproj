@@ -52,10 +52,10 @@
 		EC8A99FC1CABD9B50042A6AD /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E01CABD9B50042A6AD /* Operation.swift */; };
 		EC8A99FD1CABD9B50042A6AD /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E01CABD9B50042A6AD /* Operation.swift */; };
 		EC8A99FE1CABD9B50042A6AD /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E01CABD9B50042A6AD /* Operation.swift */; };
-		EC8A99FF1CABD9B50042A6AD /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* Property.swift */; };
-		EC8A9A001CABD9B50042A6AD /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* Property.swift */; };
-		EC8A9A011CABD9B50042A6AD /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* Property.swift */; };
-		EC8A9A021CABD9B50042A6AD /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* Property.swift */; };
+		EC8A99FF1CABD9B50042A6AD /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */; };
+		EC8A9A001CABD9B50042A6AD /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */; };
+		EC8A9A011CABD9B50042A6AD /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */; };
+		EC8A9A021CABD9B50042A6AD /* ReactiveProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */; };
 		EC8A9A031CABD9B50042A6AD /* RawStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E21CABD9B50042A6AD /* RawStream.swift */; };
 		EC8A9A041CABD9B50042A6AD /* RawStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E21CABD9B50042A6AD /* RawStream.swift */; };
 		EC8A9A051CABD9B50042A6AD /* RawStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8A99E21CABD9B50042A6AD /* RawStream.swift */; };
@@ -115,7 +115,7 @@
 		EC8A99DE1CABD9B50042A6AD /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Foundation.swift; path = Sources/Foundation.swift; sourceTree = SOURCE_ROOT; };
 		EC8A99DF1CABD9B50042A6AD /* Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Observer.swift; path = Sources/Observer.swift; sourceTree = SOURCE_ROOT; };
 		EC8A99E01CABD9B50042A6AD /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Sources/Operation.swift; sourceTree = SOURCE_ROOT; };
-		EC8A99E11CABD9B50042A6AD /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Sources/Property.swift; sourceTree = SOURCE_ROOT; };
+		EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReactiveProperty.swift; path = Sources/ReactiveProperty.swift; sourceTree = SOURCE_ROOT; };
 		EC8A99E21CABD9B50042A6AD /* RawStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RawStream.swift; path = Sources/RawStream.swift; sourceTree = SOURCE_ROOT; };
 		EC8A99E31CABD9B50042A6AD /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Sources/Stream.swift; sourceTree = SOURCE_ROOT; };
 		EC8A99E41CABD9B50042A6AD /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subjects.swift; path = Sources/Subjects.swift; sourceTree = SOURCE_ROOT; };
@@ -207,7 +207,7 @@
 				EC8A99E41CABD9B50042A6AD /* Subjects.swift */,
 				EC8A99E01CABD9B50042A6AD /* Operation.swift */,
 				EC8A99E31CABD9B50042A6AD /* Stream.swift */,
-				EC8A99E11CABD9B50042A6AD /* Property.swift */,
+				EC8A99E11CABD9B50042A6AD /* ReactiveProperty.swift */,
 				EC8A99DB1CABD9B50042A6AD /* CollectionProperty.swift */,
 				EC8A99DE1CABD9B50042A6AD /* Foundation.swift */,
 				EC8A99E51CABD9B50042A6AD /* System.swift */,
@@ -460,7 +460,7 @@
 			files = (
 				EC8A9A041CABD9B50042A6AD /* RawStream.swift in Sources */,
 				ECCC81C71CDF4D5900019ECF /* Result.swift in Sources */,
-				EC8A9A001CABD9B50042A6AD /* Property.swift in Sources */,
+				EC8A9A001CABD9B50042A6AD /* ReactiveProperty.swift in Sources */,
 				16A6B8FB1CE7957400C27D5B /* ProtocolProxy.swift in Sources */,
 				EC8A99E81CABD9B50042A6AD /* CollectionProperty.swift in Sources */,
 				EC8A99F81CABD9B50042A6AD /* Observer.swift in Sources */,
@@ -482,7 +482,7 @@
 			files = (
 				EC8A9A051CABD9B50042A6AD /* RawStream.swift in Sources */,
 				ECCC81C81CDF4D5900019ECF /* Result.swift in Sources */,
-				EC8A9A011CABD9B50042A6AD /* Property.swift in Sources */,
+				EC8A9A011CABD9B50042A6AD /* ReactiveProperty.swift in Sources */,
 				16A6B8FC1CE7957400C27D5B /* ProtocolProxy.swift in Sources */,
 				EC8A99E91CABD9B50042A6AD /* CollectionProperty.swift in Sources */,
 				EC8A99F91CABD9B50042A6AD /* Observer.swift in Sources */,
@@ -504,7 +504,7 @@
 			files = (
 				EC8A9A061CABD9B50042A6AD /* RawStream.swift in Sources */,
 				ECCC81C91CDF4D5900019ECF /* Result.swift in Sources */,
-				EC8A9A021CABD9B50042A6AD /* Property.swift in Sources */,
+				EC8A9A021CABD9B50042A6AD /* ReactiveProperty.swift in Sources */,
 				16A6B8FD1CE7957400C27D5B /* ProtocolProxy.swift in Sources */,
 				EC8A99EA1CABD9B50042A6AD /* CollectionProperty.swift in Sources */,
 				EC8A99FA1CABD9B50042A6AD /* Observer.swift in Sources */,
@@ -526,7 +526,7 @@
 			files = (
 				EC8A9A031CABD9B50042A6AD /* RawStream.swift in Sources */,
 				ECCC81C61CDF4D5900019ECF /* Result.swift in Sources */,
-				EC8A99FF1CABD9B50042A6AD /* Property.swift in Sources */,
+				EC8A99FF1CABD9B50042A6AD /* ReactiveProperty.swift in Sources */,
 				16A6B8FA1CE7957400C27D5B /* ProtocolProxy.swift in Sources */,
 				EC8A99E71CABD9B50042A6AD /* CollectionProperty.swift in Sources */,
 				EC8A99F71CABD9B50042A6AD /* Observer.swift in Sources */,
