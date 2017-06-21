@@ -770,15 +770,15 @@ public extension RawStreamType {
   @warn_unused_result
   public func concatWith(other: RawStream<Event>) -> RawStream<Event> {
     return RawStream { observer in
-      let serialDisposable = SerialDisposable(otherDisposable: nil)
-      serialDisposable.otherDisposable = self.observe { event in
+      let compositeDisposable = CompositeDisposable()
+      compositeDisposable += self.observe { event in
         if event.isCompletion {
-          serialDisposable.otherDisposable = other.observe(observer.observer)
+          compositeDisposable += other.observe(observer.observer)
         } else {
           observer.observer(event)
         }
       }
-      return serialDisposable
+      return compositeDisposable
     }
   }
 
